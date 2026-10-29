@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello Cutie! 💗 Special Surprise For You</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Fredoka:wght@500;600;700&family=Lora:ital,wght@0,500;0,600;1,400&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Particle Container -->
+  <div id="particle-container" class="fixed inset-0 pointer-events-none z-50 overflow-hidden"></div>
+
+  <!-- Hidden File Input for Photo Upload -->
+  <input type="file" id="photoUploadInput" accept="image/*" class="hidden">
+
+  <!-- Top-Right Floating Controls -->
+  <div class="fixed top-3 right-3 z-40 flex items-center gap-2 flex-wrap justify-end">
+    <button id="soundToggleBtn" onclick="toggleSound()" class="bg-[#fff9f0]/95 hover:bg-white text-[#9e2a2b] border-2 border-[#9e2a2b] px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold shadow-md flex items-center gap-1.5 transition transform hover:scale-105">
+      <span id="soundIcon">🔊</span> <span class="hidden sm:inline">Sound FX</span>
+    </button>
+    <button onclick="triggerPhotoUpload('smilePhotoImg')" class="bg-[#fff9f0]/95 hover:bg-white text-[#9e2a2b] border-2 border-[#9e2a2b] px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold shadow-md flex items-center gap-1.5 transition transform hover:scale-105">
+      <span>✏️</span> <span>Change Photo</span>
+    </button>
+  </div>
+
+  <!-- Main Organic Cream Scrapbook Card -->
+  <main class="scrapbook-card" id="scrapbookCard">
+
+    <!-- PAGE 1: HELLO CUTIE! -->
+    <section class="page-slide active" id="page-1">
+      <div class="hello-bubble mb-4 sm:mb-6 mt-1">
+        <h1 class="font-cute-bold text-4xl sm:text-6xl tracking-wide text-white drop-shadow-sm">
+          Hello Cutie!
+        </h1>
+        <p class="font-serif-love text-sm sm:text-lg text-pink-100 mt-1 font-semibold flex items-center justify-center gap-1.5">
+          I made this especially for you
+          <span class="inline-block animate-bounce text-lg sm:text-xl">💗</span>
+        </p>
+      </div>
+
+      <!-- Center Animated Gift Box -->
+      <div class="my-2 sm:my-4 flex flex-col items-center z-20">
+        <div onclick="nextPage(2, event)" class="gift-animate" title="Click to open your surprise!">
+          <svg width="165" height="165" viewBox="0 0 200 200" class="w-32 h-32 sm:w-44 sm:h-44 drop-shadow-md">
+            <path d="M100 56 C75 18, 42 35, 65 58 C78 65, 92 58, 100 56 Z" fill="none" stroke="#eb1c24" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M100 56 C125 18, 158 35, 135 58 C122 65, 108 58, 100 56 Z" fill="none" stroke="#eb1c24" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M96 58 L74 85" stroke="#eb1c24" stroke-width="10" stroke-linecap="round"></path>
+            <path d="M104 58 L126 85" stroke="#eb1c24" stroke-width="10" stroke-linecap="round"></path>
+            <rect x="34" y="56" width="132" height="26" rx="6" fill="#ff9ebb"></rect>
+            <rect x="40" y="80" width="120" height="5" fill="#eb1c24"></rect>
+            <rect x="40" y="85" width="120" height="92" rx="6" fill="#ffaec8"></rect>
+            <g class="beating-heart" style="transform-origin: 100px 132px;">
+              <path d="M100 162 C100 162, 66 138, 66 117 C66 104, 77 96, 88 96 C95 96, 99 101, 100 105 C101 101, 105 96, 112 96 C123 96, 134 104, 134 117 C134 138, 100 162, 100 162 Z" fill="#e61919"></path>
+            </g>
+            <circle cx="100" cy="56" r="8" fill="#c91219"></circle>
+          </svg>
+        </div>
+
+        <button onclick="nextPage(2, event)" class="red-pill-btn mt-3 sm:mt-4">
+          Click To Open
+        </button>
+      </div>
+
+      <!-- Bottom-Left Sticker: Cool Cat with Sunglasses -->
+      <div class="absolute -bottom-3 -left-2 sm:bottom-0 sm:left-2 w-36 sm:w-56 pointer-events-none z-10 cat-bob">
+        <svg viewBox="0 0 240 220" class="w-full h-auto white-sticker-outline">
+          <path d="M20 220 C20 150, 45 95, 50 75 L35 22 L85 52 C110 44, 140 44, 165 52 L210 22 L195 78 C210 110, 222 160, 225 220 Z" fill="#f7f3eb"></path>
+          <path d="M40 30 L80 54 C90 65, 75 95, 52 82 Z" fill="#c97a3e"></path>
+          <path d="M204 28 L162 52 C152 65, 168 95, 192 82 Z" fill="#c97a3e"></path>
+          <path d="M95 48 C115 45, 130 45, 148 48 C142 75, 102 75, 95 48 Z" fill="#d4894a"></path>
+          <polygon points="44,34 52,68 74,54" fill="#f2b8c6"></polygon>
+          <polygon points="198,34 190,68 168,54" fill="#f2b8c6"></polygon>
+          <polygon points="114,132 128,132 121,141" fill="#e895a5"></polygon>
+          <path d="M110 148 Q121 154 132 148" stroke="#8c6d62" stroke-width="3" fill="none" stroke-linecap="round"></path>
+          <g transform="rotate(-4 120 105)">
+            <path d="M42 88 Q80 86 112 96 Q121 99 130 96 Q162 86 198 88 L192 118 Q160 132 132 114 Q121 106 110 114 Q82 132 48 118 Z" fill="#1a1a1a" stroke="#000" stroke-width="3"></path>
+            <ellipse cx="75" cy="103" rx="16" ry="8" fill="rgba(255,255,255,0.28)" transform="rotate(-12 75 103)"></ellipse>
+            <ellipse cx="158" cy="103" rx="16" ry="8" fill="rgba(255,255,255,0.28)" transform="rotate(-12 158 103)"></ellipse>
+          </g>
+          <path d="M170 220 C165 175, 178 130, 192 106 C206 96, 222 112, 214 135 C208 160, 215 190, 218 220 Z" fill="#f4eee1" stroke="#d9cfc0" stroke-width="2"></path>
+          <circle cx="195" cy="112" r="5" fill="#e8dad0"></circle>
+          <circle cx="204" cy="116" r="5" fill="#e8dad0"></circle>
+        </svg>
+      </div>
+
+      <!-- Bottom-Right Sticker: Ginger Kitten with Bouquet -->
+      <div class="absolute -bottom-2 right-0 sm:bottom-1 sm:right-3 w-36 sm:w-52 pointer-events-none z-10 cat-sway">
+        <svg viewBox="0 0 220 250" class="w-full h-auto sticker-shadow">
+          <ellipse cx="135" cy="185" rx="46" ry="55" fill="#d99b66"></ellipse>
+          <ellipse cx="135" cy="190" rx="28" ry="42" fill="#f5e1c8"></ellipse>
+          <circle cx="135" cy="95" r="50" fill="#e0a46e"></circle>
+          <polygon points="90,65 82,20 122,48" fill="#d18e54"></polygon>
+          <polygon points="88,58 86,28 114,48" fill="#f2aebc"></polygon>
+          <polygon points="180,65 188,20 148,48" fill="#d18e54"></polygon>
+          <polygon points="182,58 184,28 156,48" fill="#f2aebc"></polygon>
+          <path d="M125 55 L128 72 M135 52 L135 72 M145 55 L142 72" stroke="#a6632d" stroke-width="3.5" stroke-linecap="round"></path>
+          <circle cx="114" cy="96" r="11" fill="#1f140e"></circle>
+          <circle cx="111" cy="92" r="3.5" fill="#fff"></circle>
+          <circle cx="156" cy="96" r="11" fill="#1f140e"></circle>
+          <circle cx="153" cy="92" r="3.5" fill="#fff"></circle>
+          <ellipse cx="135" cy="112" rx="16" ry="11" fill="#fff5eb"></ellipse>
+          <polygon points="130,106 140,106 135,113" fill="#f08ca0"></polygon>
+          <path d="M128 117 Q135 122 142 117" stroke="#78472a" stroke-width="2.2" fill="none" stroke-linecap="round"></path>
+          <g transform="translate(88, 42) rotate(-18)">
+            <path d="M0 0 L-22 -14 L-22 14 Z" fill="#eb5e91"></path>
+            <path d="M0 0 L22 -14 L22 14 Z" fill="#eb5e91"></path>
+            <path d="M-4 4 L-14 26 M4 4 L14 26" stroke="#eb5e91" stroke-width="6" stroke-linecap="round"></path>
+            <circle cx="0" cy="0" r="6" fill="#d13b72"></circle>
+          </g>
+          <g transform="translate(30, 110) rotate(-10)">
+            <polygon points="15,65 95,65 70,125 40,125" fill="#f7bfa8"></polygon>
+            <polygon points="5,75 105,75 65,122 45,122" fill="#fcd5c5"></polygon>
+            <path d="M35 68 L30 42 M50 68 L50 35 M65 68 L72 42 M42 68 L40 48 M58 68 L62 48" stroke="#4f8a3d" stroke-width="4" stroke-linecap="round"></path>
+            <ellipse cx="30" cy="38" rx="7" ry="10" fill="#f04886"></ellipse>
+            <ellipse cx="42" cy="32" rx="7" ry="10" fill="#ff6ba3"></ellipse>
+            <ellipse cx="55" cy="30" rx="7" ry="10" fill="#e6397a"></ellipse>
+            <ellipse cx="68" cy="36" rx="7" ry="10" fill="#ff6ba3"></ellipse>
+            <ellipse cx="38" cy="48" rx="7" ry="9" fill="#ff85b3"></ellipse>
+            <ellipse cx="52" cy="46" rx="7" ry="9" fill="#f04886"></ellipse>
+            <ellipse cx="64" cy="49" rx="7" ry="9" fill="#ff85b3"></ellipse>
+            <path d="M40 112 Q55 118 70 112" stroke="#ff9ebb" stroke-width="6" fill="none"></path>
+            <path d="M52 115 L44 138 M58 115 L66 138" stroke="#ff9ebb" stroke-width="5" stroke-linecap="round"></path>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <!-- PAGE 2: ARE YOU READY FOR A LITTLE SURPRISE?? -->
+    <section class="page-slide" id="page-2">
+      <h2 class="font-tall-hand text-[#a72020] text-4xl sm:text-6xl text-center mb-8 sm:mb-12 z-20 px-4 sm:ml-24">
+        Are You Ready For A Little Surprise??
+      </h2>
+
+      <div class="w-full max-w-2xl flex flex-col items-center gap-6 sm:gap-10 z-20 mt-2">
+        <div class="w-full flex flex-col sm:flex-row items-center justify-between gap-5 px-4 sm:px-8">
+          <button onclick="nextPage(3, event)" class="red-pill-btn min-w-[200px] sm:min-w-[230px]">
+            <span>Yes</span> <span class="text-2xl sm:text-3xl">🧸</span>
+          </button>
+
+          <button onclick="nextPage(3, event)" class="red-pill-btn min-w-[200px] sm:min-w-[230px]">
+            <span>Of Course</span> <span class="text-2xl sm:text-3xl">🦄</span>
+          </button>
+        </div>
+
+        <button onclick="nextPage(3, event)" class="red-pill-btn min-w-[220px] sm:min-w-[250px]">
+          <span>Definetly</span> <span class="text-2xl sm:text-3xl">🙊</span>
+        </button>
+      </div>
+
+      <!-- Top-Left Sticker -->
+      <div class="absolute top-2 left-2 sm:top-4 sm:left-5 w-32 sm:w-52 pointer-events-none z-10 cat-bob">
+        <svg viewBox="0 0 230 230" class="w-full h-auto sticker-shadow">
+          <polygon points="48,68 32,26 78,44" fill="#7c756d"></polygon>
+          <polygon points="175,68 196,26 146,44" fill="#7c756d"></polygon>
+          <ellipse cx="115" cy="160" rx="45" ry="42" fill="#e8e6e1"></ellipse>
+          <circle cx="115" cy="105" r="52" fill="#e8e6e1"></circle>
+          <path d="M65 85 C75 60, 155 60, 165 85 C155 100, 140 75, 115 80 C90 75, 75 100, 65 85 Z" fill="#6b635b"></path>
+          <path d="M56 75 C56 30, 174 30, 174 75 Z" fill="#7d2440"></path>
+          <path d="M58 65 C15 62, 8 82, 42 88 C75 90, 130 72, 168 74 Z" fill="#631830"></path>
+          <circle cx="92" cy="108" r="12" fill="#1f1b16"></circle>
+          <circle cx="89" cy="104" r="3.5" fill="#fff"></circle>
+          <circle cx="138" cy="108" r="12" fill="#1f1b16"></circle>
+          <circle cx="135" cy="104" r="3.5" fill="#fff"></circle>
+          <polygon points="110,120 120,120 115,126" fill="#d97789"></polygon>
+          <ellipse cx="122" cy="128" rx="9" ry="6" fill="#cf5f74" transform="rotate(-20 122 128)"></ellipse>
+          <g transform="translate(15, 110) rotate(-14)">
+            <path d="M35 55 L25 90 M42 55 L40 92 M48 55 L52 90" stroke="#4d8a35" stroke-width="5" stroke-linecap="round"></path>
+            <ellipse cx="26" cy="42" rx="9" ry="13" fill="#f285ad"></ellipse>
+            <ellipse cx="42" cy="36" rx="9" ry="13" fill="#ff9ec2"></ellipse>
+            <ellipse cx="56" cy="45" rx="9" ry="13" fill="#e86b99"></ellipse>
+            <ellipse cx="35" cy="54" rx="9" ry="12" fill="#ffb3cf"></ellipse>
+            <ellipse cx="49" cy="56" rx="9" ry="12" fill="#f285ad"></ellipse>
+          </g>
+          <polygon points="175,135 182,148 196,150 186,160 188,174 175,167 162,174 164,160 154,150 168,148" fill="#ffd1e6" stroke="#ff9ec7" stroke-width="2"></polygon>
+        </svg>
+      </div>
+
+      <!-- Bottom-Right Sticker -->
+      <div class="absolute -bottom-3 right-1 sm:bottom-1 sm:right-4 w-40 sm:w-56 pointer-events-none z-10">
+        <svg viewBox="0 0 240 210" class="w-full h-auto sticker-shadow">
+          <polygon points="52,78 44,18 98,48" fill="#d6b8a8"></polygon>
+          <polygon points="56,68 50,28 88,48" fill="#f2aebc"></polygon>
+          <polygon points="188,78 196,18 142,48" fill="#d6b8a8"></polygon>
+          <polygon points="184,68 190,28 152,48" fill="#f2aebc"></polygon>
+          <ellipse cx="120" cy="112" rx="76" ry="64" fill="#e3d1c5"></ellipse>
+          <ellipse cx="120" cy="126" rx="62" ry="46" fill="#f7efe9"></ellipse>
+          <path d="M105 56 L108 76 M120 52 L120 76 M135 56 L132 76" stroke="#8c7265" stroke-width="4" stroke-linecap="round"></path>
+          <circle cx="90" cy="102" r="14" fill="#1c1613"></circle>
+          <circle cx="86" cy="97" r="4.5" fill="#fff"></circle>
+          <circle cx="150" cy="102" r="14" fill="#1c1613"></circle>
+          <circle cx="146" cy="97" r="4.5" fill="#fff"></circle>
+          <ellipse cx="68" cy="126" rx="22" ry="14" fill="#ff4d94" opacity="0.55"></ellipse>
+          <path d="M56 122 L50 132 M68 122 L62 132 M80 122 L74 132" stroke="#ff1a75" stroke-width="4.5" stroke-linecap="round"></path>
+          <ellipse cx="172" cy="126" rx="22" ry="14" fill="#ff4d94" opacity="0.55"></ellipse>
+          <path d="M160 122 L154 132 M172 122 L166 132 M184 122 L178 132" stroke="#ff1a75" stroke-width="4.5" stroke-linecap="round"></path>
+          <polygon points="113,112 127,112 120,121" fill="#ff6699"></polygon>
+          <path d="M106 129 Q120 137 134 129" stroke="#6e4f42" stroke-width="3" fill="none" stroke-linecap="round"></path>
+          <g class="shy-left">
+            <rect x="35" y="162" width="42" height="26" rx="12" fill="#ffdfc4" stroke="#e0b594" stroke-width="2"></rect>
+            <rect x="70" y="166" width="32" height="11" rx="5.5" fill="#ffdfc4" stroke="#e0b594" stroke-width="2"></rect>
+          </g>
+          <g class="shy-right">
+            <rect x="163" y="162" width="42" height="26" rx="12" fill="#ffdfc4" stroke="#e0b594" stroke-width="2"></rect>
+            <rect x="138" y="166" width="32" height="11" rx="5.5" fill="#ffdfc4" stroke="#e0b594" stroke-width="2"></rect>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <!-- PAGE 3: DO YOU KNOW HOW MUCH I LOVE YOU ?? -->
+    <section class="page-slide" id="page-3">
+      <div class="flex items-center justify-center gap-4 sm:gap-8 mb-2 z-20">
+        <span class="text-4xl sm:text-5xl animate-bounce" style="animation-duration: 2.2s;">🎀</span>
+        <div class="w-28 sm:w-40 white-sticker-outline cat-bob">
+          <svg viewBox="0 0 200 190" class="w-full h-auto">
+            <path d="M35 185 C35 130, 45 90, 52 65 L42 18 L86 42 C100 38, 115 38, 124 42 L162 18 L152 65 C158 90, 168 130, 168 185 Z" fill="#f5e6d3"></path>
+            <path d="M92 42 L95 62 M102 40 L102 62 M112 42 L109 62" stroke="#d9b99b" stroke-width="3.5" stroke-linecap="round"></path>
+            <g transform="translate(52, 36) rotate(-20) scale(0.75)">
+              <path d="M0 0 L-18 -12 L-18 12 Z M0 0 L18 -12 L18 12 Z" fill="#f598b6"></path>
+              <circle cx="0" cy="0" r="5" fill="#e06c93"></circle>
+            </g>
+            <g transform="translate(150, 36) rotate(20) scale(0.75)">
+              <path d="M0 0 L-18 -12 L-18 12 Z M0 0 L18 -12 L18 12 Z" fill="#f598b6"></path>
+              <circle cx="0" cy="0" r="5" fill="#e06c93"></circle>
+            </g>
+            <circle cx="78" cy="82" r="9.5" fill="#2b211b"></circle>
+            <circle cx="75" cy="79" r="3" fill="#fff"></circle>
+            <circle cx="126" cy="82" r="9.5" fill="#2b211b"></circle>
+            <circle cx="123" cy="79" r="3" fill="#fff"></circle>
+            <ellipse cx="62" cy="96" rx="12" ry="7" fill="#ff8da8" opacity="0.6"></ellipse>
+            <ellipse cx="142" cy="96" rx="12" ry="7" fill="#ff8da8" opacity="0.6"></ellipse>
+            <polygon points="98,90 106,90 102,96" fill="#eb7a95"></polygon>
+            <path d="M62 175 C55 135, 75 115, 102 128 C129 115, 149 135, 142 175" fill="#fff8f0" stroke="#decbb8" stroke-width="3"></path>
+            <path d="M102 156 C102 156, 84 142, 84 131 C84 124, 92 120, 98 125 L102 129 L106 125 C112 120, 120 124, 120 131 C120 142, 102 156, 102 156 Z" fill="#c9a98d"></path>
+          </svg>
+        </div>
+        <span class="text-4xl sm:text-5xl animate-bounce" style="animation-duration: 2.5s;">🎀</span>
+      </div>
+
+      <h2 class="font-tall-hand text-[#a72020] text-4xl sm:text-6xl text-center mb-6 sm:mb-8 z-20">
+        DO YOU KNOW HOW MUCH I LOVE YOU ??
+      </h2>
+
+      <div class="w-full max-w-2xl flex flex-col items-center gap-5 sm:gap-7 z-20">
+        <div class="w-full flex flex-col sm:flex-row items-center justify-between gap-4 px-4 sm:px-10">
+          <button onclick="nextPage(4, event)" class="red-pill-btn min-w-[190px] sm:min-w-[220px]">
+            <span>VERY</span> <span class="text-2xl">🌸</span>
+          </button>
+
+          <button onclick="nextPage(4, event)" class="red-pill-btn min-w-[190px] sm:min-w-[220px]">
+            <span>A LOTT</span> <span class="text-2xl">⭐</span>
+          </button>
+        </div>
+
+        <button onclick="nextPage(4, event)" class="red-pill-btn min-w-[220px] sm:min-w-[250px]">
+          <span>INFINITE</span> <span class="text-2xl">🧸</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- PAGE 4: YOU KNOW WHAT I LOVE THE MOST? -->
+    <section class="page-slide" id="page-4">
+      <h2 class="font-tall-hand text-[#a72020] text-4xl sm:text-6xl text-center mb-6 sm:mb-9 z-20 px-2">
+        YOU KNOW WHAT I LOVE THE MOST?
+      </h2>
+
+      <button onclick="nextPage(5, event)" class="red-pill-btn text-2xl sm:text-4xl px-10 py-3.5 z-20">
+        Click to know!
+      </button>
+
+      <!-- Bottom-Left Sticker -->
+      <div class="absolute -bottom-3 -left-2 sm:bottom-0 sm:left-2 w-36 sm:w-52 pointer-events-none z-10 cat-bob">
+        <svg viewBox="0 0 220 230" class="w-full h-auto sticker-shadow">
+          <path d="M40 230 C38 175, 52 145, 65 130 L145 130 C158 145, 165 175, 162 230 Z" fill="#fcf9f5"></path>
+          <ellipse cx="105" cy="95" rx="68" ry="56" fill="#fcf9f5"></ellipse>
+          <path d="M42 75 C45 42, 75 38, 88 55 C72 68, 55 75, 42 75 Z" fill="#e6a86e"></path>
+          <path d="M168 75 C165 42, 135 38, 122 55 C138 68, 155 75, 168 75 Z" fill="#e6a86e"></path>
+          <g transform="translate(46, 68)">
+            <path d="M0 0 L-12 -8 L-12 8 Z M0 0 L12 -8 L12 8 Z" fill="#f06292"></path>
+            <circle cx="0" cy="0" r="3.5" fill="#c2185b"></circle>
+          </g>
+          <g transform="translate(164, 68)">
+            <path d="M0 0 L-12 -8 L-12 8 Z M0 0 L12 -8 L12 8 Z" fill="#f06292"></path>
+            <circle cx="0" cy="0" r="3.5" fill="#c2185b"></circle>
+          </g>
+          <circle cx="76" cy="76" r="13" fill="#1f1712"></circle>
+          <circle cx="72" cy="71" r="4" fill="#fff"></circle>
+          <circle cx="134" cy="76" r="13" fill="#1f1712"></circle>
+          <circle cx="130" cy="71" r="4" fill="#fff"></circle>
+          <polygon points="94,76 116,76 105,92" fill="#ff7aa2"></polygon>
+          <path d="M84 102 Q105 112 126 102" stroke="#6e473b" stroke-width="3.5" fill="none" stroke-linecap="round"></path>
+          <ellipse cx="56" cy="96" rx="14" ry="7" fill="#ff8da8" opacity="0.55"></ellipse>
+          <ellipse cx="154" cy="96" rx="14" ry="7" fill="#ff8da8" opacity="0.55"></ellipse>
+        </svg>
+      </div>
+
+      <!-- Bottom-Right Sticker -->
+      <div class="absolute -bottom-3 right-1 sm:bottom-0 sm:right-4 w-40 sm:w-56 pointer-events-none z-10">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 text-2xl sm:text-3xl" style="animation: floatUpHeart 1.8s ease-in-out infinite;">❤️</div>
+        <div class="absolute top-12 -left-3 text-2xl sm:text-3xl" style="animation: floatUpHeart 2.1s ease-in-out infinite 0.3s;">❤️</div>
+        <div class="absolute top-6 -right-2 text-2xl sm:text-3xl" style="animation: floatUpHeart 1.9s ease-in-out infinite 0.6s;">❤️</div>
+
+        <svg viewBox="0 0 220 220" class="w-full h-auto sticker-shadow cat-sway">
+          <polygon points="55,75 42,20 92,48" fill="#a67c52"></polygon>
+          <polygon points="165,75 178,20 128,48" fill="#a67c52"></polygon>
+          <ellipse cx="110" cy="180" rx="52" ry="45" fill="#b88b5e"></ellipse>
+          <circle cx="110" cy="108" r="56" fill="#c49768"></circle>
+          <path d="M98 58 L100 78 M110 55 L110 78 M122 58 L120 78" stroke="#6e4924" stroke-width="4" stroke-linecap="round"></path>
+          <circle cx="86" cy="102" r="16" fill="#14110f"></circle>
+          <circle cx="86" cy="102" r="13" fill="#0d0b09"></circle>
+          <circle cx="81" cy="96" r="4.5" fill="#fff"></circle>
+          <circle cx="134" cy="102" r="16" fill="#14110f"></circle>
+          <circle cx="130" cy="96" r="4.5" fill="#fff"></circle>
+          <ellipse cx="66" cy="122" rx="14" ry="8" fill="#eb5e7d" opacity="0.65"></ellipse>
+          <ellipse cx="154" cy="122" rx="14" ry="8" fill="#eb5e7d" opacity="0.65"></ellipse>
+          <ellipse cx="98" cy="128" rx="14" ry="11" fill="#f2e6d8"></ellipse>
+          <ellipse cx="122" cy="128" rx="14" ry="11" fill="#f2e6d8"></ellipse>
+          <polygon points="104,118 116,118 110,125" fill="#d97789"></polygon>
+          <path d="M72 210 C62 175, 68 142, 85 135 C95 135, 96 155, 92 210 Z" fill="#b38659" stroke="#8c6239" stroke-width="2"></path>
+          <path d="M148 210 C158 175, 152 142, 135 135 C125 135, 124 155, 128 210 Z" fill="#b38659" stroke="#8c6239" stroke-width="2"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- PAGE 5: YOUR BEAUTIFUL SMILE ! -->
+    <section class="page-slide" id="page-5">
+      <h2 class="font-tall-hand text-[#a72020] text-4xl sm:text-6xl text-center mb-4 sm:mb-6 z-20 sm:ml-36">
+        YOUR BEAUTIFUL SMILE !
+      </h2>
+
+      <div class="w-full flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-14 z-20 px-4">
+        <div class="flex flex-col items-center">
+          <div class="w-44 sm:w-60 relative sticker-shadow">
+            <svg viewBox="0 0 240 230" class="w-full h-auto">
+              <polygon points="45,75 22,18 92,38" fill="#b87638"></polygon>
+              <polygon points="195,75 218,18 148,38" fill="#b87638"></polygon>
+              <circle cx="120" cy="98" r="68" fill="#d48c46"></circle>
+              <circle cx="120" cy="115" r="52" fill="#e6ac73"></circle>
+              <path d="M68 78 L108 92" stroke="#593212" stroke-width="6" stroke-linecap="round"></path>
+              <path d="M172 78 L132 92" stroke="#593212" stroke-width="6" stroke-linecap="round"></path>
+              <ellipse cx="88" cy="96" rx="14" ry="11" fill="#1a1612"></ellipse>
+              <circle cx="85" cy="93" r="3.5" fill="#fff"></circle>
+              <ellipse cx="152" cy="96" rx="14" ry="11" fill="#1a1612"></ellipse>
+              <circle cx="149" cy="93" r="3.5" fill="#fff"></circle>
+              <polygon points="113,118 127,118 120,127" fill="#c95b6b"></polygon>
+              <g class="point-hand-anim" transform="translate(22, 118)">
+                <rect x="18" y="18" width="76" height="54" rx="22" fill="#f2c2a2" stroke="#d19875" stroke-width="2.5"></rect>
+                <rect x="16" y="24" width="22" height="38" rx="10" fill="#ebB592" stroke="#d19875" stroke-width="2"></rect>
+                <rect x="36" y="26" width="22" height="40" rx="10" fill="#ebB592" stroke="#d19875" stroke-width="2"></rect>
+                <ellipse cx="56" cy="72" rx="20" ry="12" fill="#e6ad8a" stroke="#d19875" stroke-width="2"></ellipse>
+                <circle cx="72" cy="36" r="19" fill="#f7ceb2" stroke="#d19875" stroke-width="2.5"></circle>
+                <circle cx="74" cy="34" r="10" fill="#fce0cc"></circle>
+              </g>
+            </svg>
+          </div>
+
+          <button onclick="nextPage(6, event)" class="red-pill-btn mt-2 px-10">
+            Next
+          </button>
+        </div>
+
+        <!-- Portrait Photo Frame -->
+        <div class="smile-frame w-60 h-60 sm:w-80 sm:h-80 relative group cursor-pointer" onclick="triggerPhotoUpload('smilePhotoImg')" title="Click to upload your favorite smiling photo!">
+          <img id="smilePhotoImg" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&auto=format&fit=crop&q=80" alt="Your Beautiful Smile" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+            <span class="text-white font-semibold text-sm bg-[#a72020]/90 px-4 py-2 rounded-full">📷 Click to Change Photo</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 6: LOVE LETTER & POLAROID -->
+    <section class="page-slide" id="page-6">
+      <div class="w-full flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 z-20 px-2 sm:px-6">
+        
+        <!-- Left: Polaroid Card -->
+        <div class="polaroid-card w-56 sm:w-64 transform -rotate-6 cursor-pointer relative group" onclick="triggerPhotoUpload('polaroidPhotoImg')">
+          <div class="w-full h-44 sm:h-52 overflow-hidden bg-stone-200">
+            <img id="polaroidPhotoImg" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&auto=format&fit=crop&q=80" alt="Special Memory" class="w-full h-full object-cover">
+          </div>
+          <p class="font-tall-hand text-2xl text-center text-[#912424] mt-3">My Favorite Person 💗</p>
+        </div>
+
+        <!-- Right: Vintage Parchment Scroll -->
+        <div class="parchment-scroll w-full sm:w-7/12 max-w-md text-[#2b180a]">
+          <h3 class="font-tall-hand text-3xl sm:text-4xl text-[#a72020] mb-2">Dear Cutie,</h3>
+          <p class="font-serif-love text-xs sm:text-[13.5px] leading-relaxed space-y-3">
+            Every moment spent with you feels like a beautiful dream I never want to wake up from. Your smile brightens my darkest days, and your laugh is my favorite melody. <br><br>
+            Thank you for being the most wonderful, caring, and adorable person in my life. I love you to the moon and back, infinitely and forever! 🌷✨
+          </p>
+          <div class="mt-4 text-right font-tall-hand text-2xl text-[#a72020]">
+            Forever Yours ❤️
+          </div>
+        </div>
+
+      </div>
+
+      <button onclick="nextPage(1, event)" class="red-pill-btn mt-5 text-base px-7 py-1.5">
+        Replay ↺
+      </button>
+    </section>
+
+  </main>
+
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
